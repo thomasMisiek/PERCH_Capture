@@ -1,0 +1,186 @@
+{
+  "schema_version": 2,
+  "coordinate_system": "metres; origin southwest floor corner in room plan, x east/right, y north/up, z altitude above floor",
+  "room_dimensions_m": [
+    7,
+    6.2,
+    2.8
+  ],
+  "notes": "Proposed experimental sites, not physically verified. Existing simulated geometry is authoritative. Camera pitches are -40 degrees BELOW horizontal and yaw uses +x=0, +y=90, -x=180, -y=270. Camera positions are external visualization viewpoints, NOT drone poses or sensory readings. Site altitude describes reference/target point, not clearance guarantees. Restricted regions must not be treated as single excluded voxels.",
+  "sites": [
+    {
+      "id": "base",
+      "label": "B",
+      "role": "base",
+      "position_m": [
+        0.3,
+        3.05,
+        0.12
+      ],
+      "location": "Floor 30 cm from the LEFT wall in the gap between bookcase and bed",
+      "enabled": true,
+      "visualization_camera": {
+        "position_m": [
+          1.45,
+          3.05,
+          1.085
+        ],
+        "yaw_deg": 180,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    },
+    {
+      "id": "dresser_perch",
+      "label": "P1",
+      "role": "perch",
+      "position_m": [
+        3.3,
+        4.82,
+        1.03
+      ],
+      "location": "12 cm above 0.91 m dresser top; center over dresser",
+      "enabled": false,
+      "visualization_camera": {
+        "position_m": [
+          3.55,
+          3.7,
+          1.993
+        ],
+        "yaw_deg": 102.58,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    },
+    {
+      "id": "door_ground_perch",
+      "label": "P2",
+      "role": "perch",
+      "position_m": [
+        3.55,
+        0.3,
+        0.12
+      ],
+      "location": "Ground near front (bottom) wall, 30 cm from wall; right of door and left of desk",
+      "enabled": false,
+      "visualization_camera": {
+        "position_m": [
+          3.55,
+          1.55,
+          1.169
+        ],
+        "yaw_deg": 270,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    },
+    {
+      "id": "wardrobe_ground_perch",
+      "label": "P3",
+      "role": "perch",
+      "position_m": [
+        6.7,
+        3.35,
+        0.12
+      ],
+      "location": "Ground below/just south of wardrobe in floor plan; 30 cm from RIGHT wall",
+      "enabled": false,
+      "visualization_camera": {
+        "position_m": [
+          5.55,
+          3.35,
+          1.085
+        ],
+        "yaw_deg": 0,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    },
+    {
+      "id": "left_pillow_restricted",
+      "label": "R1",
+      "role": "restricted",
+      "position_m": [
+        1.05,
+        5.43,
+        0.83
+      ],
+      "location": "Above first/left pillow centered x=1.05, y=5.43",
+      "enabled": true,
+      "restriction": {
+        "type": "protected_area",
+        "suggested_xy_radius_m": 0.33,
+        "needs_3d_volume": true
+      },
+      "visualization_camera": {
+        "position_m": [
+          2.75,
+          4.2,
+          2.591
+        ],
+        "yaw_deg": 144.11,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    },
+    {
+      "id": "right_pillow_restricted",
+      "label": "R2",
+      "role": "restricted",
+      "position_m": [
+        2.03,
+        5.43,
+        0.83
+      ],
+      "location": "Above second/right pillow centered x=2.03, y=5.43",
+      "enabled": true,
+      "restriction": {
+        "type": "protected_area",
+        "suggested_xy_radius_m": 0.33,
+        "needs_3d_volume": true
+      },
+      "visualization_camera": {
+        "position_m": [
+          3.55,
+          3.85,
+          2.67
+        ],
+        "yaw_deg": 133.89,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    },
+    {
+      "id": "computer_front_restricted",
+      "label": "R3",
+      "role": "restricted",
+      "position_m": [
+        5.66,
+        1.55,
+        1.25
+      ],
+      "location": "In air IN FRONT of monitor; monitor plane near y=0.92–0.99; protect space on room-facing side (larger y), NOT monitor surface",
+      "enabled": true,
+      "restriction": {
+        "type": "protected_area",
+        "suggested_xy_rectangle_m": [
+          5.22,
+          6.1,
+          1.35,
+          1.83
+        ],
+        "needs_3d_volume": true
+      },
+      "visualization_camera": {
+        "position_m": [
+          5.66,
+          2.55,
+          2.089
+        ],
+        "yaw_deg": 270,
+        "pitch_deg": -40,
+        "look_at_site": true
+      }
+    }
+  ]
+}

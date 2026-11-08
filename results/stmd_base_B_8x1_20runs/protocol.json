@@ -1,0 +1,27 @@
+{
+  "model": "SingleBankSTMD, one bank of eight equal-speed directions (8x1)",
+  "observation": "Stationary base B, 320x320 RGB at 20 Hz, 84x84 degree FoV",
+  "target_sizes_mm": [
+    5,
+    7,
+    20
+  ],
+  "starting_distances_m": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0
+  ],
+  "independent_runs_per_target_size_and_start_distance": 20,
+  "duration_per_run_s": 10,
+  "correct": "accepted candidate, visible insect, localization ray transverse error < 5% of target range",
+  "start_distance_accuracy": "unweighted average of per-run visible-frame accuracy, each run one observation",
+  "actual_distance_accuracy": "visible frames pooled from 20 independent runs per initial condition into 10\u201325 cm and 25 cm actual-range bins, through 4 m; bin contributions vary",
+  "target": "idealized dark disk; inertial obstacle-avoiding random flight",
+  "scoring": "ground truth used only for evaluation, not detector input"
+}

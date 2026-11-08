@@ -1,0 +1,4 @@
+species,start_distance_m,total_frames,visible_frames,visibility_pct,correct_visible,detection_correct_pct,forced_choice_pct,correct_all_frames_pct,accepted_visible_pct,mean_actual_distance_m,final_distance_m,obstacle_avoidance_updates,blocked_motion_updates,replicate,simulation_seed
+fly,0.1,200,200,100.0,151,75.5,78.5,75.5,75.5,2.522497525755512,4.4116479805981,104,0,6,208654
+mosquito,0.1,200,200,100.0,191,95.5,95.5,95.5,95.5,1.850585116508927,3.044889220372856,81,0,6,208654
+hornet,0.1,200,83,41.5,59,71.08433734939759,71.08433734939759,29.5,71.08433734939759,2.1400290459050946,1.5935965864872148,96,0,6,208654

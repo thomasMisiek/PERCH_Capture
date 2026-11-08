@@ -1,0 +1,159 @@
+{
+  "protocol": {
+    "task": "Paired 6-DOF microquad simulated pursuit, same flight and 7mm insect for both LGMD variants",
+    "camera": "20 frames per second, 320x320 render, matched 160x160 retinal processing",
+    "frame_input": "Direct log-brightness differences between consecutive images; independent ON and OFF",
+    "dvs_input": "Simulated positive and negative log-contrast crossing event counts; independent ON and OFF; no grayscale frame supplied to DVS detector",
+    "circuit": "ON/OFF-specific delayed retinotopic radial-expansion activity with lateral inhibition, feedforward inhibition, polarity competition and separate channel alarm thresholds",
+    "controller": "Unchanged decoupled camera steering and 400ms predictive lead; alarm decisions are replayed and do not alter the flight",
+    "contact_rule": "First entry into 2cm 3D separation; a correct basket alarm must occur within the preceding 200ms",
+    "use_of_truth": "Only after prediction, in evaluator. Neural models have no distance, position, masks or collision time.",
+    "tuning": "10 development seeds (2026-2052); neural/basket thresholds selected for at most one false trigger on tuning runs; opponent competition of 0.8 was subsequently explored on the 20 development runs.",
+    "new_seed_eval": "3101-3110: generated after freezing all parameters and evaluated without retuning",
+    "limitations": "Simulation-only, approximated binned DVS not an asynchronous hardware event camera; frame model uses camera brightness; simplified LGMD-inspired circuit not direct neurophysiological replication; benchmark is offline flight replay not physical interception"
+  },
+  "parameters": {
+    "frame": {
+      "frame_threshold": 0.07,
+      "contrast_gain": 2,
+      "on_neural_gate": 0.6,
+      "off_neural_gate": 0.45,
+      "on_basket_threshold": 0.45,
+      "off_basket_threshold": 0.55,
+      "opponent_max_ratio": 0.8,
+      "refractory_frames": 20
+    },
+    "dvs": {
+      "on_neural_gate": 0.6,
+      "off_neural_gate": 0.6,
+      "on_basket_threshold": 1.65,
+      "off_basket_threshold": 1.6,
+      "opponent_max_ratio": 0.8,
+      "refractory_frames": 20
+    }
+  },
+  "development": {
+    "flights": 20,
+    "close_contact_entries": 24,
+    "frame": {
+      "timely": 13,
+      "false_triggers": 1,
+      "successful_runs": 12
+    },
+    "dvs": {
+      "timely": 4,
+      "false_triggers": 0,
+      "successful_runs": 3
+    }
+  },
+  "fresh": {
+    "flights": 10,
+    "close_contact_entries": 13,
+    "frame": {
+      "timely": 9,
+      "false_triggers": 2,
+      "successful_runs": 6
+    },
+    "dvs": {
+      "timely": 1,
+      "false_triggers": 0,
+      "successful_runs": 1
+    }
+  },
+  "all": {
+    "flights": 30,
+    "close_contact_entries": 37,
+    "frame": {
+      "timely": 22,
+      "false_triggers": 3,
+      "successful_runs": 18
+    },
+    "dvs": {
+      "timely": 5,
+      "false_triggers": 0,
+      "successful_runs": 4
+    }
+  },
+  "new_seed_rows": [
+    {
+      "seed": 3101,
+      "contacts": 0,
+      "frame_timely": 0,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3102,
+      "contacts": 2,
+      "frame_timely": 2,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3103,
+      "contacts": 0,
+      "frame_timely": 0,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3104,
+      "contacts": 1,
+      "frame_timely": 0,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3105,
+      "contacts": 1,
+      "frame_timely": 0,
+      "frame_false": 1,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3106,
+      "contacts": 1,
+      "frame_timely": 1,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3107,
+      "contacts": 1,
+      "frame_timely": 1,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3108,
+      "contacts": 2,
+      "frame_timely": 2,
+      "frame_false": 0,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3109,
+      "contacts": 3,
+      "frame_timely": 2,
+      "frame_false": 1,
+      "dvs_timely": 0,
+      "dvs_false": 0
+    },
+    {
+      "seed": 3110,
+      "contacts": 2,
+      "frame_timely": 1,
+      "frame_false": 0,
+      "dvs_timely": 1,
+      "dvs_false": 0
+    }
+  ]
+}

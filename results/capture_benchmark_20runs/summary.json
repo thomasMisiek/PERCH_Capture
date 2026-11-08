@@ -1,0 +1,1096 @@
+{
+  "protocol": {
+    "n": 20,
+    "seeds": [
+      2026,
+      2028,
+      2032,
+      2040,
+      2042,
+      2044,
+      2046,
+      2048,
+      2050,
+      2052,
+      2061,
+      2077,
+      2083,
+      2099,
+      2111,
+      2137,
+      2153,
+      2161,
+      2179,
+      2203
+    ],
+    "duration_s": 20,
+    "launch_distance_cm": 150,
+    "target_diameter_mm": 7,
+    "lead_s": 0.4,
+    "controller": "oracle bearing + 400ms predictive steering + archived decoupled chase",
+    "looming": "causal frame-binned DVS LGMD; tuned on a single previous trajectory",
+    "capture": "center distance <2cm and LGMD rising edge in preceding 200ms",
+    "all_distances_100hz_min": true,
+    "pass_count_sampled_20hz": true
+  },
+  "results": {
+    "caught_simulations": 5,
+    "failed_simulations": 15,
+    "whole_sim_failure_rate": 0.75,
+    "passes_10cm": 47,
+    "passes_2cm": 24,
+    "successful_passes": 5,
+    "failed_passes": 42,
+    "pass_failure_rate": 0.8936170212765957,
+    "mean_min_cm": 1.4615000000000002,
+    "median_min_cm": 0.89,
+    "min_min_cm": 0.16999999999999998,
+    "max_min_cm": 7.6,
+    "collision_terminated": 12,
+    "completed_20s": 8
+  },
+  "trials": [
+    {
+      "seed": 2026,
+      "requested_s": 20.0,
+      "observed_s": 14.35,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.62,
+      "closest_time_s": 2.9,
+      "obstacle_contact": true,
+      "passes_10cm": 3,
+      "passes_2cm": 2,
+      "lgmd_onsets": 6,
+      "lgmd_onset_s": [
+        2.85,
+        5.25,
+        7.15,
+        9.25,
+        11.0,
+        13.75
+      ],
+      "catches": 1,
+      "any_catch": true,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.75,
+          "end_s": 3.15,
+          "sampled_min_cm": 1.194,
+          "crossed_2cm": true,
+          "timely_lgmd": true,
+          "capture": true,
+          "lgmd_onsets_in_window": [
+            2.85
+          ]
+        },
+        {
+          "start_s": 6.5,
+          "end_s": 6.6,
+          "sampled_min_cm": 8.2,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 12.95,
+          "end_s": 13.4,
+          "sampled_min_cm": 1.716,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 287,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2028,
+      "requested_s": 20.0,
+      "observed_s": 9.5,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 1.16,
+      "closest_time_s": 3.56,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 1,
+      "lgmd_onsets": 3,
+      "lgmd_onset_s": [
+        6.3,
+        7.65,
+        8.65
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 3.4,
+          "end_s": 3.85,
+          "sampled_min_cm": 1.905,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 8.05,
+          "end_s": 8.35,
+          "sampled_min_cm": 6.563,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 190,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2032,
+      "requested_s": 20.0,
+      "observed_s": 7.7,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 1.4200000000000002,
+      "closest_time_s": 2.83,
+      "obstacle_contact": true,
+      "passes_10cm": 1,
+      "passes_2cm": 1,
+      "lgmd_onsets": 2,
+      "lgmd_onset_s": [
+        3.4,
+        5.5
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 1,
+      "attempts": [
+        {
+          "start_s": 2.7,
+          "end_s": 3.1,
+          "sampled_min_cm": 1.501,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 154,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2040,
+      "requested_s": 20.0,
+      "observed_s": 11.55,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 1.0,
+      "closest_time_s": 3.17,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 1,
+      "lgmd_onsets": 6,
+      "lgmd_onset_s": [
+        3.2,
+        5.6,
+        6.95,
+        8.65,
+        9.95,
+        11.05
+      ],
+      "catches": 1,
+      "any_catch": true,
+      "misses": 1,
+      "attempts": [
+        {
+          "start_s": 3.0,
+          "end_s": 3.6,
+          "sampled_min_cm": 1.136,
+          "crossed_2cm": true,
+          "timely_lgmd": true,
+          "capture": true,
+          "lgmd_onsets_in_window": [
+            3.2
+          ]
+        },
+        {
+          "start_s": 10.45,
+          "end_s": 10.55,
+          "sampled_min_cm": 9.737,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 231,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2042,
+      "requested_s": 20.0,
+      "observed_s": 7.8,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 3.2099999999999995,
+      "closest_time_s": 6.59,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 0,
+      "lgmd_onsets": 3,
+      "lgmd_onset_s": [
+        4.35,
+        5.45,
+        7.3
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.5,
+          "end_s": 2.95,
+          "sampled_min_cm": 4.445,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 6.45,
+          "end_s": 6.95,
+          "sampled_min_cm": 3.75,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 156,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2044,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.4,
+      "closest_time_s": 3.37,
+      "obstacle_contact": false,
+      "passes_10cm": 3,
+      "passes_2cm": 3,
+      "lgmd_onsets": 7,
+      "lgmd_onset_s": [
+        5.4,
+        6.85,
+        11.4,
+        12.8,
+        14.75,
+        17.3,
+        18.6
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 3,
+      "attempts": [
+        {
+          "start_s": 3.15,
+          "end_s": 3.75,
+          "sampled_min_cm": 0.672,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 8.15,
+          "end_s": 8.55,
+          "sampled_min_cm": 1.429,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 12.0,
+          "end_s": 12.4,
+          "sampled_min_cm": 0.817,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2046,
+      "requested_s": 20.0,
+      "observed_s": 9.15,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.52,
+      "closest_time_s": 4.63,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 1,
+      "lgmd_onsets": 2,
+      "lgmd_onset_s": [
+        3.9,
+        5.25
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 4.2,
+          "end_s": 5.05,
+          "sampled_min_cm": 2.197,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 8.2,
+          "end_s": 8.45,
+          "sampled_min_cm": 6.878,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 183,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2048,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.8,
+      "closest_time_s": 10.48,
+      "obstacle_contact": false,
+      "passes_10cm": 4,
+      "passes_2cm": 2,
+      "lgmd_onsets": 10,
+      "lgmd_onset_s": [
+        3.3,
+        4.85,
+        6.55,
+        8.55,
+        9.8,
+        11.15,
+        12.7,
+        14.3,
+        17.75,
+        18.8
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 4,
+      "attempts": [
+        {
+          "start_s": 2.45,
+          "end_s": 2.95,
+          "sampled_min_cm": 1.748,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 10.35,
+          "end_s": 10.75,
+          "sampled_min_cm": 1.42,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 14.25,
+          "end_s": 14.65,
+          "sampled_min_cm": 2.32,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 18.55,
+          "end_s": 19.1,
+          "sampled_min_cm": 3.485,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2050,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.8200000000000001,
+      "closest_time_s": 12.12,
+      "obstacle_contact": false,
+      "passes_10cm": 2,
+      "passes_2cm": 2,
+      "lgmd_onsets": 7,
+      "lgmd_onset_s": [
+        3.25,
+        4.4,
+        9.05,
+        10.75,
+        14.55,
+        17.7,
+        19.0
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.4,
+          "end_s": 2.95,
+          "sampled_min_cm": 1.606,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 12.0,
+          "end_s": 12.4,
+          "sampled_min_cm": 1.064,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2052,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 3.25,
+      "closest_time_s": 2.55,
+      "obstacle_contact": false,
+      "passes_10cm": 2,
+      "passes_2cm": 0,
+      "lgmd_onsets": 2,
+      "lgmd_onset_s": [
+        4.3,
+        6.5
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.4,
+          "end_s": 2.85,
+          "sampled_min_cm": 3.985,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 7.65,
+          "end_s": 8.3,
+          "sampled_min_cm": 8.772,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2061,
+      "requested_s": 20.0,
+      "observed_s": 8.2,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.29,
+      "closest_time_s": 2.9,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 1,
+      "lgmd_onsets": 0,
+      "lgmd_onset_s": [],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.75,
+          "end_s": 3.2,
+          "sampled_min_cm": 0.533,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 6.95,
+          "end_s": 7.35,
+          "sampled_min_cm": 4.762,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 164,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2077,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.16999999999999998,
+      "closest_time_s": 3.53,
+      "obstacle_contact": false,
+      "passes_10cm": 4,
+      "passes_2cm": 2,
+      "lgmd_onsets": 9,
+      "lgmd_onset_s": [
+        3.5,
+        7.25,
+        9.15,
+        10.7,
+        13.45,
+        14.45,
+        15.75,
+        18.3,
+        19.65
+      ],
+      "catches": 1,
+      "any_catch": true,
+      "misses": 3,
+      "attempts": [
+        {
+          "start_s": 3.15,
+          "end_s": 4.1,
+          "sampled_min_cm": 1.639,
+          "crossed_2cm": true,
+          "timely_lgmd": true,
+          "capture": true,
+          "lgmd_onsets_in_window": [
+            3.5
+          ]
+        },
+        {
+          "start_s": 6.9,
+          "end_s": 7.15,
+          "sampled_min_cm": 5.23,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 10.75,
+          "end_s": 11.2,
+          "sampled_min_cm": 1.822,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 19.05,
+          "end_s": 19.4,
+          "sampled_min_cm": 7.179,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2083,
+      "requested_s": 20.0,
+      "observed_s": 14.55,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.24,
+      "closest_time_s": 3.01,
+      "obstacle_contact": true,
+      "passes_10cm": 3,
+      "passes_2cm": 1,
+      "lgmd_onsets": 6,
+      "lgmd_onset_s": [
+        3.0,
+        7.0,
+        8.7,
+        11.5,
+        13.25,
+        14.45
+      ],
+      "catches": 1,
+      "any_catch": true,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.85,
+          "end_s": 3.3,
+          "sampled_min_cm": 0.279,
+          "crossed_2cm": true,
+          "timely_lgmd": true,
+          "capture": true,
+          "lgmd_onsets_in_window": [
+            3.0
+          ]
+        },
+        {
+          "start_s": 6.4,
+          "end_s": 6.5,
+          "sampled_min_cm": 9.64,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 9.55,
+          "end_s": 9.6,
+          "sampled_min_cm": 9.763,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 291,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2099,
+      "requested_s": 20.0,
+      "observed_s": 12.55,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.96,
+      "closest_time_s": 3.26,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 1,
+      "lgmd_onsets": 4,
+      "lgmd_onset_s": [
+        3.9,
+        5.5,
+        9.15,
+        11.4
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 3.1,
+          "end_s": 3.6,
+          "sampled_min_cm": 1.586,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 11.7,
+          "end_s": 11.85,
+          "sampled_min_cm": 8.355,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 251,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2111,
+      "requested_s": 20.0,
+      "observed_s": 19.7,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 7.6,
+      "closest_time_s": 2.38,
+      "obstacle_contact": true,
+      "passes_10cm": 1,
+      "passes_2cm": 0,
+      "lgmd_onsets": 4,
+      "lgmd_onset_s": [
+        4.2,
+        5.6,
+        7.8,
+        18.35
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 1,
+      "attempts": [
+        {
+          "start_s": 2.35,
+          "end_s": 2.5,
+          "sampled_min_cm": 9.561,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 394,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2137,
+      "requested_s": 20.0,
+      "observed_s": 7.65,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 2.33,
+      "closest_time_s": 2.7,
+      "obstacle_contact": true,
+      "passes_10cm": 2,
+      "passes_2cm": 0,
+      "lgmd_onsets": 1,
+      "lgmd_onset_s": [
+        5.95
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 2.55,
+          "end_s": 3.05,
+          "sampled_min_cm": 2.577,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 6.4,
+          "end_s": 6.7,
+          "sampled_min_cm": 3.576,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 153,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2153,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.27999999999999997,
+      "closest_time_s": 16.32,
+      "obstacle_contact": false,
+      "passes_10cm": 4,
+      "passes_2cm": 3,
+      "lgmd_onsets": 5,
+      "lgmd_onset_s": [
+        4.4,
+        10.95,
+        12.7,
+        17.15,
+        18.75
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 4,
+      "attempts": [
+        {
+          "start_s": 5.0,
+          "end_s": 5.95,
+          "sampled_min_cm": 0.898,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 8.5,
+          "end_s": 8.65,
+          "sampled_min_cm": 2.278,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 16.2,
+          "end_s": 16.6,
+          "sampled_min_cm": 0.857,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 19.65,
+          "end_s": 19.7,
+          "sampled_min_cm": 9.109,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2161,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 1.9900000000000002,
+      "closest_time_s": 17.4,
+      "obstacle_contact": false,
+      "passes_10cm": 2,
+      "passes_2cm": 1,
+      "lgmd_onsets": 4,
+      "lgmd_onset_s": [
+        3.3,
+        4.45,
+        5.75,
+        19.7
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 4.9,
+          "end_s": 5.1,
+          "sampled_min_cm": 8.939,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 17.1,
+          "end_s": 17.7,
+          "sampled_min_cm": 1.991,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2179,
+      "requested_s": 20.0,
+      "observed_s": 7.55,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 0.53,
+      "closest_time_s": 2.9,
+      "obstacle_contact": true,
+      "passes_10cm": 1,
+      "passes_2cm": 1,
+      "lgmd_onsets": 2,
+      "lgmd_onset_s": [
+        3.45,
+        5.55
+      ],
+      "catches": 0,
+      "any_catch": false,
+      "misses": 1,
+      "attempts": [
+        {
+          "start_s": 2.7,
+          "end_s": 3.15,
+          "sampled_min_cm": 0.533,
+          "crossed_2cm": true,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 151,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    },
+    {
+      "seed": 2203,
+      "requested_s": 20.0,
+      "observed_s": 20.0,
+      "launch_distance_cm": 150.0,
+      "diameter_mm": 7.0,
+      "closest_cm": 1.6400000000000001,
+      "closest_time_s": 5.2,
+      "obstacle_contact": false,
+      "passes_10cm": 3,
+      "passes_2cm": 1,
+      "lgmd_onsets": 7,
+      "lgmd_onset_s": [
+        5.05,
+        7.05,
+        10.15,
+        14.7,
+        17.0,
+        18.35,
+        19.6
+      ],
+      "catches": 1,
+      "any_catch": true,
+      "misses": 2,
+      "attempts": [
+        {
+          "start_s": 4.85,
+          "end_s": 5.5,
+          "sampled_min_cm": 3.313,
+          "crossed_2cm": true,
+          "timely_lgmd": true,
+          "capture": true,
+          "lgmd_onsets_in_window": [
+            5.05
+          ]
+        },
+        {
+          "start_s": 7.6,
+          "end_s": 7.75,
+          "sampled_min_cm": 7.329,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        },
+        {
+          "start_s": 14.7,
+          "end_s": 14.8,
+          "sampled_min_cm": 8.503,
+          "crossed_2cm": false,
+          "timely_lgmd": false,
+          "capture": false,
+          "lgmd_onsets_in_window": []
+        }
+      ],
+      "frame_count": 400,
+      "oracle_stmd": true,
+      "lead_s": 0.4,
+      "decoupled": true,
+      "lgmd_input": "20Hz binned DVS events",
+      "sensor_threshold_fitted_on_archived_single_seed": true
+    }
+  ]
+}

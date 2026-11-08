@@ -1,0 +1,264 @@
+{
+  "protocol": {
+    "dataset": "20 independently seeded furnished-room 3D simulated flights",
+    "input": "20Hz FrameToDVS ON/OFF maps only",
+    "detector": "DVSExpansionLGMD",
+    "neural_looming_threshold": 1.225,
+    "basket_trigger_threshold": 1.6,
+    "off_gate": 0.8,
+    "refractory_frames": 20,
+    "contact_radius_cm": 2,
+    "valid_trigger_lead_ms": [
+      0,
+      200
+    ],
+    "contact_time": "First interpolated entry into 2cm; 100Hz simulator minimum used if contact falls between 20Hz frames",
+    "ground_truth_usage": "Scoring only; not supplied to the neural detector or basket trigger",
+    "generalization": "Offline simulation benchmark; zero false alarms on these runs does not imply zero false alarms on unseen data"
+  },
+  "overall": {
+    "runs": 20,
+    "contact_events": 24,
+    "timely_triggered_contacts": 4,
+    "successful_runs": 3,
+    "off_window_triggers": 0,
+    "total_triggers": 4
+  },
+  "calibration": {
+    "runs": 10,
+    "contact_events": 12,
+    "timely_triggered_contacts": 3,
+    "successful_runs": 2,
+    "off_window_triggers": 0,
+    "total_triggers": 3
+  },
+  "evaluation": {
+    "runs": 10,
+    "contact_events": 12,
+    "timely_triggered_contacts": 1,
+    "successful_runs": 1,
+    "off_window_triggers": 0,
+    "total_triggers": 1
+  },
+  "original_sensitive_setting": {
+    "basket_trigger_threshold": 1.225,
+    "successful_runs": 14,
+    "contacts_with_timely_trigger": 16,
+    "off_window_triggers": 63,
+    "total_triggers": 79
+  },
+  "strict_alert_timing_s": {
+    "2026": {
+      "alarm": [
+        2.85
+      ],
+      "first_contact": [
+        2.9057041842,
+        13.1245531885
+      ]
+    },
+    "2044": {
+      "alarm": [
+        3.3
+      ],
+      "first_contact": [
+        3.3727696255,
+        8.2746113161,
+        12.162132803
+      ]
+    },
+    "2153": {
+      "alarm": [
+        8.5,
+        16.25
+      ],
+      "first_contact": [
+        5.6861850484,
+        8.52549934,
+        16.3233813654
+      ]
+    }
+  },
+  "runs": [
+    {
+      "seed": 2026,
+      "observed_s": 14.35,
+      "contact_count": 2,
+      "matched_contacts": 1,
+      "off_window_triggers": 0,
+      "original_captures": 1,
+      "original_alarms": 6
+    },
+    {
+      "seed": 2028,
+      "observed_s": 9.5,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 3
+    },
+    {
+      "seed": 2032,
+      "observed_s": 7.7,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 2
+    },
+    {
+      "seed": 2040,
+      "observed_s": 11.55,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 1,
+      "original_alarms": 6
+    },
+    {
+      "seed": 2042,
+      "observed_s": 7.8,
+      "contact_count": 0,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 3
+    },
+    {
+      "seed": 2044,
+      "observed_s": 20,
+      "contact_count": 3,
+      "matched_contacts": 1,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 8
+    },
+    {
+      "seed": 2046,
+      "observed_s": 9.15,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 2
+    },
+    {
+      "seed": 2048,
+      "observed_s": 20,
+      "contact_count": 2,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 10
+    },
+    {
+      "seed": 2050,
+      "observed_s": 20,
+      "contact_count": 2,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 7
+    },
+    {
+      "seed": 2052,
+      "observed_s": 20,
+      "contact_count": 0,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 2
+    },
+    {
+      "seed": 2061,
+      "observed_s": 8.2,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 0
+    },
+    {
+      "seed": 2077,
+      "observed_s": 20,
+      "contact_count": 2,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 1,
+      "original_alarms": 9
+    },
+    {
+      "seed": 2083,
+      "observed_s": 14.55,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 1,
+      "original_alarms": 6
+    },
+    {
+      "seed": 2099,
+      "observed_s": 12.55,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 4
+    },
+    {
+      "seed": 2111,
+      "observed_s": 19.7,
+      "contact_count": 0,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 4
+    },
+    {
+      "seed": 2137,
+      "observed_s": 7.65,
+      "contact_count": 0,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 1
+    },
+    {
+      "seed": 2153,
+      "observed_s": 20,
+      "contact_count": 3,
+      "matched_contacts": 2,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 5
+    },
+    {
+      "seed": 2161,
+      "observed_s": 20,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 4
+    },
+    {
+      "seed": 2179,
+      "observed_s": 7.55,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 0,
+      "original_alarms": 2
+    },
+    {
+      "seed": 2203,
+      "observed_s": 20,
+      "contact_count": 1,
+      "matched_contacts": 0,
+      "off_window_triggers": 0,
+      "original_captures": 1,
+      "original_alarms": 6
+    }
+  ]
+}

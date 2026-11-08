@@ -1,0 +1,42 @@
+{
+  "protocol": {
+    "description": "20 independent frozen furnished-room 6-DOF flights. Original oracle STMD bearing, 400ms lead, and decoupled pursuit unchanged.",
+    "input": "20Hz FrameToDVS ON/OFF maps at 320x320, summed to 160x160 retinal bins",
+    "lgmd_input": "DVS maps only; no target position, size, 3D range, STMD bearing, or trajectory truth",
+    "model": "Retinotopic radial expansion with OFF-pathway coincidence and global feed-forward inhibition",
+    "threshold": 1.225,
+    "off_gate": 0.8,
+    "refractory_frames": 20,
+    "capture_rule": "Distance below 2 cm and trigger onset within prior 200 ms",
+    "split": "10 alternating training seeds and 10 alternate evaluation seeds; exploratory, not external independent validation"
+  },
+  "overall": {
+    "runs": 20,
+    "original_success_runs": 5,
+    "expansion_success_runs": 14,
+    "capture_range_passes": 24,
+    "original_success_passes": 5,
+    "expansion_success_passes": 16,
+    "original_false_alarms": 85,
+    "expansion_false_alarms": 63,
+    "original_alarm_count": 90,
+    "expansion_alarm_count": 79,
+    "observed_minutes": 4.8375
+  },
+  "training": {
+    "n": 10,
+    "original_success_runs": 2,
+    "expansion_success_runs": 8
+  },
+  "evaluation": {
+    "n": 10,
+    "original_success_runs": 3,
+    "expansion_success_runs": 6
+  },
+  "limitations": [
+    "Alarm count remains too high for a production capture device",
+    "OFF-pathway dark-target bias may not transfer to bright targets",
+    "Parameters were developed with access to this simulation distribution",
+    "20Hz frame-sampled DVS is not asynchronous GENX320 and no embedded hardware was tested"
+  ]
+}

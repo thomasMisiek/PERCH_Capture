@@ -1,0 +1,23 @@
+{
+  "dataset": "30 simulated interception flights",
+  "metric_definition": "Close pass: an episode with sampled 3D separation at or below 10 cm. Successful pass: an actual sub-2cm encounter with a basket trigger in the preceding 0–200 ms. Two-centimeter contacts are resolved using physics output where 20Hz samples miss the minimum.",
+  "totals": {
+    "simulations": 30,
+    "simulations_with_capture": 18,
+    "capture_rate_per_simulation": 0.6,
+    "captured_passes": 22,
+    "capture_rate_per_pass": 0.3142857142857143,
+    "false_triggers": 3,
+    "total_triggers": 25,
+    "total_passes_within_10cm": 70,
+    "passes_reaching_2cm": 37,
+    "capture_rate_per_2cm_contact": 0.5945945945945946
+  },
+  "minimum_distance_cm": {
+    "min": 0.28,
+    "median": 1.46,
+    "mean": 2.01,
+    "max": 9.56
+  },
+  "limitations": "Simulated basket-trigger qualification; no physical capture measurement. Only contact opportunities under 2 cm counted as passes; closest approach for every flight in CSV."
+}
