@@ -18,6 +18,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
       - name: Render lightweight full-duration GIF
         run: |
           ffmpeg -hide_banner -loglevel error -y -i media/PERCH_INTERCEPTION.mp4 -vf "fps=8,scale=640:-2:flags=lanczos,palettegen=max_colors=128:stats_mode=diff" -frames:v 1 /tmp/perch-palette.png
