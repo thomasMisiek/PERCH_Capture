@@ -2,6 +2,8 @@
 
 ## Latest interception simulation
 
+<a href="media/PERCH_INTERCEPTION.mp4"><img src="media/PERCH_INTERCEPTION_preview.gif" alt="Latest PERCH interception simulation" width="100%"></a>
+
 [**Watch PERCH_INTERCEPTION.mp4 — the most up-to-date interception simulation**](media/PERCH_INTERCEPTION.mp4)
 
 This repository develops the **detection, pursuit and capture** system for PERCH, a miniature drone intended to catch flying pests indoors.
