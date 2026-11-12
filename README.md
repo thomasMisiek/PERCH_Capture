@@ -18,6 +18,47 @@ The system investigates insect-inspired **STMD** (Small-Target Motion Detector) 
 
 **Roadmap:** This repository covers capture. Another will address **spatial navigation**, and a third will integrate both in simulation. Once the integrated simulation works, the goal is a **Crazyflie-class drone with a Prophesee event camera**, weighing **less than 50 g in total**. The algorithms must fit its onboard computing resources.
 
+## Interception and LGMD detection
+
+PERCH can pursue the same insect through multiple approaches, including after a missed interception. As the distance to the target repeatedly falls, the **LGMD collision detector** identifies imminent contact and triggers the snapping capture basket. A capture is counted when the basket is triggered **within 200 ms before impact** (the insect passing within **2 cm** of PERCH).
+
+### Full-length simulation sequences
+
+Three independent 20 fps flights showing the onboard visual stream and the drone/insect trajectories.
+
+![Complete 14.35 s pursuit: seed 2026](media/interception_full_seed_2026.gif)
+
+![Complete 11.55 s pursuit: seed 2040](media/interception_full_seed_2040.gif)
+
+![Complete 20.00 s pursuit: seed 2044](media/interception_full_seed_2044.gif)
+
+### LGMD performance
+
+The benchmark includes **30 furnished-room simulations**, with each insect starting approximately 150 cm from PERCH and runs lasting up to 20 seconds. A **pass** is an approach within 10 cm; a **capture** additionally requires the insect to reach 2 cm and an LGMD basket trigger within the preceding 200 ms.
+
+| Metric | Result |
+|---|---:|
+| Simulations | **30** |
+| Total close passes (within 10 cm) | **70** |
+| Passes reaching the 2 cm capture range | **37** |
+| Simulations with at least one captured pass | **18/30 (60.0%)** |
+| Captured passes | **22** |
+| Success rate per pass | **22/70 (31.4%)** |
+| False triggers outside the valid window | **3** |
+| Total LGMD basket triggers | **25** |
+| Closest approach across simulations | **0.28–9.56 cm** |
+| Median closest approach per simulation | **1.46 cm** |
+
+Across **22 successful LGMD triggers**, the detector fired on average **79 ms before entering the 2 cm capture range** (median 73 ms; range 32–180 ms). For the **20 encounters with a recorded exit**, it fired on average **153 ms before leaving that range** (median 137 ms; range 83–304 ms); the remaining two exits could not be measured reliably.
+
+Each simulation's closest distance, 10 cm close-pass count, 2 cm entries, and capture result is recorded in the [per-simulation results](results/lgmd_20261108/lgmd_simulation_summary.csv). The [pass-by-pass results](results/lgmd_20261108/lgmd_pass_summary.csv) include individual trigger timing and missed opportunities.
+
+### Repeated interception attempts and LGMD activation
+
+The distance to the insect drops repeatedly as PERCH makes several interception attempts. **Green activation bars** show LGMD-triggered basket closures timed for a catch; the **red bar** shows a false alarm. Each activation lasts **50 ms** (one recorded time step). The dashed line marks the 2 cm impact range.
+
+![Repeated pursuits, target distance and LGMD basket-trigger timing](results/lgmd_20261108/lgmd_temporal_example_3109.svg)
+
 ## 3D environment
 
 A furnished **7 × 6.2 × 2.8 m bedroom**. External views hide the walls and ceiling to show the layout; the simulated onboard cameras render the enclosed room.
@@ -116,44 +157,3 @@ pip install -r requirements.txt
 python src/bedroom.py --output media
 python -m unittest discover -s tests -v
 ```
-
-## Interception and LGMD detection
-
-PERCH can pursue the same insect through multiple approaches, including after a missed interception. As the distance to the target repeatedly falls, the **LGMD collision detector** identifies imminent contact and triggers the snapping capture basket. A capture is counted when the basket is triggered **within 200 ms before impact** (the insect passing within **2 cm** of PERCH).
-
-### Full-length simulation sequences
-
-Three independent 20 fps flights showing the onboard visual stream and the drone/insect trajectories.
-
-![Complete 14.35 s pursuit: seed 2026](media/interception_full_seed_2026.gif)
-
-![Complete 11.55 s pursuit: seed 2040](media/interception_full_seed_2040.gif)
-
-![Complete 20.00 s pursuit: seed 2044](media/interception_full_seed_2044.gif)
-
-### LGMD performance
-
-The benchmark includes **30 furnished-room simulations**, with each insect starting approximately 150 cm from PERCH and runs lasting up to 20 seconds. A **pass** is an approach within 10 cm; a **capture** additionally requires the insect to reach 2 cm and an LGMD basket trigger within the preceding 200 ms.
-
-| Metric | Result |
-|---|---:|
-| Simulations | **30** |
-| Total close passes (within 10 cm) | **70** |
-| Passes reaching the 2 cm capture range | **37** |
-| Simulations with at least one captured pass | **18/30 (60.0%)** |
-| Captured passes | **22** |
-| Success rate per pass | **22/70 (31.4%)** |
-| False triggers outside the valid window | **3** |
-| Total LGMD basket triggers | **25** |
-| Closest approach across simulations | **0.28–9.56 cm** |
-| Median closest approach per simulation | **1.46 cm** |
-
-Across **22 successful LGMD triggers**, the detector fired on average **79 ms before entering the 2 cm capture range** (median 73 ms; range 32–180 ms). For the **20 encounters with a recorded exit**, it fired on average **153 ms before leaving that range** (median 137 ms; range 83–304 ms); the remaining two exits could not be measured reliably.
-
-Each simulation's closest distance, 10 cm close-pass count, 2 cm entries, and capture result is recorded in the [per-simulation results](results/lgmd_20261108/lgmd_simulation_summary.csv). The [pass-by-pass results](results/lgmd_20261108/lgmd_pass_summary.csv) include individual trigger timing and missed opportunities.
-
-### Repeated interception attempts and LGMD activation
-
-The distance to the insect drops repeatedly as PERCH makes several interception attempts. **Green activation bars** show LGMD-triggered basket closures timed for a catch; the **red bar** shows a false alarm. Each activation lasts **50 ms** (one recorded time step). The dashed line marks the 2 cm impact range.
-
-![Repeated pursuits, target distance and LGMD basket-trigger timing](results/lgmd_20261108/lgmd_temporal_example_3109.svg)
