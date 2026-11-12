@@ -1,0 +1,48 @@
+name: Publish PERCH interception preview GIF
+
+on:
+  push:
+    paths:
+      - 'media/PERCH_INTERCEPTION.mp4'
+      - '.github/workflows/perch-interception-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-gif:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Render lightweight full-duration GIF
+        run: |
+          ffmpeg -hide_banner -loglevel error -y -i media/PERCH_INTERCEPTION.mp4 -vf "fps=8,scale=640:-2:flags=lanczos,palettegen=max_colors=128:stats_mode=diff" -frames:v 1 /tmp/perch-palette.png
+          ffmpeg -hide_banner -loglevel error -y -i media/PERCH_INTERCEPTION.mp4 -i /tmp/perch-palette.png -filter_complex "[0:v]fps=8,scale=640:-2:flags=lanczos[v];[v][1:v]paletteuse=dither=bayer:bayer_scale=3:diff_mode=rectangle" -loop 0 media/PERCH_INTERCEPTION_preview.gif
+          ls -lh media/PERCH_INTERCEPTION_preview.gif
+      - name: Show GIF full width in README without removing existing material
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('README.md')
+          text = p.read_text(encoding='utf-8')
+          marker = '[**Watch PERCH_INTERCEPTION.mp4 — the most up-to-date interception simulation**](media/PERCH_INTERCEPTION.mp4)'
+          image = '<a href="media/PERCH_INTERCEPTION.mp4"><img src="media/PERCH_INTERCEPTION_preview.gif" alt="Latest PERCH interception simulation" width="100%"></a>'
+          if image not in text:
+              if marker not in text:
+                  raise SystemExit('Expected video link not found; refusing to rewrite README.')
+              text = text.replace(marker, image + '\n\n' + marker, 1)
+              p.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit generated GIF and updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md media/PERCH_INTERCEPTION_preview.gif
+          if ! git diff --cached --quiet; then
+            git commit -m "Show latest interception simulation GIF at full README width"
+            git push
+          fi
