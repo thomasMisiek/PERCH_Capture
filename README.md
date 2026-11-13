@@ -1,5 +1,9 @@
 # PERCH — Autonomous Insect Capture in a Simulated Room
 
+## Latest interception simulation
+
+[**Watch the latest mosquito interception simulation (MP4, 20.4 MB)**](media/PERCH_INTERCEPTION_MOSQUITO.mp4) · [Open video directly](https://raw.githubusercontent.com/thomasMisiek/PERCH_Capture/main/media/PERCH_INTERCEPTION_MOSQUITO.mp4)
+
 This repository develops the **detection, pursuit and capture** system for PERCH, a miniature drone intended to catch flying pests indoors.
 
 ## Capture task
