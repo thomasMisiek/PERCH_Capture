@@ -4,8 +4,6 @@
 
 [![Latest PERCH mosquito interception simulation — 20 FPS, 1010 × 400](media/PERCH_INTERCEPTION_MOSQUITO_20fps_1010x400.gif)](media/PERCH_INTERCEPTION_MOSQUITO_40fps.mp4)
 
-[**Watch the 40 FPS mosquito interception simulation (MP4, 9.82 MB)**](media/PERCH_INTERCEPTION_MOSQUITO_40fps.mp4)
-
 [**Download the original 144 FPS video (MP4, 20.4 MB)**](https://raw.githubusercontent.com/thomasMisiek/PERCH_Capture/main/media/PERCH_INTERCEPTION_MOSQUITO.mp4)
 
 This repository develops the **detection, pursuit and capture** system for PERCH, a miniature drone intended to catch flying pests indoors.
